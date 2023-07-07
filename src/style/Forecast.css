@@ -1,0 +1,50 @@
+.forecast-card{
+  border: 1px solid blue;
+  margin-top: 20px;
+  width: 1000px;
+}
+
+.forecast-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.highest-lowest{
+  display: flex;
+}
+
+.highs{
+  margin-right: 12px;
+}
+
+
+.conditions-wrapper{
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 30px;
+  width: 500px;
+  border: 1px solid green;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.conditions-card{
+  width: 140px;
+  height: 100px;
+  margin-left: 10px;
+  text-align: center;
+  border: 1px solid yellow;
+}
+
+.conditions-title{
+  font-weight: bold;
+  text-align: center;
+}
+
+.conditions-details{
+  text-align: center;
+}

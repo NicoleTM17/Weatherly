@@ -1,0 +1,27 @@
+
+.searchbar{
+  /* position: absolute; */
+  margin-top: 50px;
+  margin-left: 20px;
+
+}
+
+.search-input{
+  width: 500px;
+  /* height: 25px; */
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.submit-btn{
+  /* height: 30px; */
+  padding: 10px 15px;
+  margin-left: 5px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.magnifying-glass{
+  margin-right: 2px;
+}

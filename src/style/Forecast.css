@@ -1,43 +1,97 @@
 .forecast-card{
   border: 1px solid blue;
+  border-radius: 5px;
   margin-top: 20px;
   width: 1000px;
 }
 
-.forecast-content{
+/* .forecast-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .highest-lowest{
   display: flex;
+  margin-top: -5px;
+  font-size: 15px;
 }
 
 .highs{
   margin-right: 12px;
 }
 
+.current-temp{
+  /* includes temperature and icon */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 50px;
+  margin-left: 250px;
+}
+
+.temp-sun{
+  display: flex;
+  align-items: center;
+}
+
+.temp{
+  /* just temperature */
+  margin-right: 12px;
+}
+
+.weather-details{
+  /* includes location, date-time, highest-lowest */
+  display: flex;
+  flex-direction: column;
+  margin-right: 285px;
+  align-items: center;
+}
+
+.current-location{
+  font-size: 30px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.sun-icon{
+  font-size: 40px;
+}
+
+
+.current-wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  /* align-items: center; */
+
+}
+
 
 .conditions-wrapper{
   display: flex;
-  margin-top: 30px;
+  margin: 0 auto;
+  margin-top: 20px;
   margin-bottom: 20px;
   padding: 30px;
   width: 500px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
   align-items: center;
   justify-content: center;
+  font-family: 'Quicksand', sans-serif;
 }
 
 
 .conditions-card{
   width: 140px;
   height: 100px;
-  margin-left: 10px;
+  margin-left: 30px;
   text-align: center;
-  border: 1px solid yellow;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.4)
 }
 
 .conditions-title{

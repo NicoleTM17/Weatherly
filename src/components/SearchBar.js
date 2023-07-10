@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // CSS:
 import '../style/SearchBar.css';
 
-
+// When a user clicks (onClick) the 'search' button, the current-location text in Forecast.js should
+// update whatever was typed in (innerhtml) so if I type in Bangkok, current location should change
 
 function SearchBar() {
   return (

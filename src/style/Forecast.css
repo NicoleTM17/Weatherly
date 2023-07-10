@@ -1,6 +1,6 @@
 .forecast-card{
-  border: 1px solid blue;
-  border-radius: 5px;
+  /* border: 1px solid blue; */
+  /* border: 1px solid white; */
   margin-top: 20px;
   width: 1000px;
 }
@@ -19,7 +19,7 @@
 }
 
 .highs{
-  margin-right: 12px;
+  margin-right: 5px;
 }
 
 .current-temp{
@@ -31,7 +31,7 @@
   margin-left: 250px;
 }
 
-.temp-sun{
+.temp-icon{
   display: flex;
   align-items: center;
 }
@@ -55,7 +55,7 @@
   margin-top: 10px;
 }
 
-.sun-icon{
+.f-icon{
   font-size: 40px;
 }
 
@@ -87,7 +87,7 @@
 
 .conditions-card{
   width: 140px;
-  height: 100px;
+  height: 110px;
   margin-left: 30px;
   text-align: center;
   border-radius: 5px;
@@ -97,8 +97,17 @@
 .conditions-title{
   font-weight: bold;
   text-align: center;
+  margin-bottom: 5px;
 }
 
 .conditions-details{
   text-align: center;
+}
+
+.conditions-icon{
+  margin-top: 6px;
+}
+
+.eve-temp-main{
+  opacity: 0.7;
 }

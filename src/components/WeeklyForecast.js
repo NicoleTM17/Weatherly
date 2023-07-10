@@ -23,67 +23,52 @@ function WeeklyForecast(props){
   const today = new Date();
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-  // set dayName to today
-  let dayName = weekday[today.getDay()];
+  // We need to access the sequence of days after today
+
+  // Array to store the next 6 days
+  const nextDays = []; // empty array
+
+  for (let day = 1; day <= 6; day++) { // iterate over the next 6 days and increment by 1
+    const nextDay = new Date(today.getTime() + (day * 24 * 60 * 60 * 1000)); // calculate the date
+    const nextDayName = weekday[nextDay.getDay()]; // find the name of the day from weekday
+    nextDays.push(nextDayName); // day name is added to empty array
+  }
+
+  // Assign each day to a separate variable
+  const day1 = nextDays[0];
+  const day2 = nextDays[1];
+  const day3 = nextDays[2];
+  const day4 = nextDays[3];
+  const day5 = nextDays[4];
+  const day6 = nextDays[5];
+
+  // console.log(day1, day2, day3, day4, day5, day6);
 
   // Access currentTemp from props!
   const currentTemp = props.currentTemp;
 
-    // weather type:
-    let weatherType;
-
-    if ((currentTemp >= -5) && (currentTemp <= -1)) {
-      weatherType = 'Frosty';
-    } else if ((currentTemp >= 0) && (currentTemp <= 10)) {
-      weatherType = 'Rainy';
-    } else if ((currentTemp >= 11) && (currentTemp <= 13)) {
-      weatherType = 'Drizzly';
-    } else if ((currentTemp >= 14) && (currentTemp <= 16)) {
-      weatherType = 'Cloudy';
-    } else if ((currentTemp >= 17) && (currentTemp <= 20)) {
-      weatherType = 'Partly cloudy';
-    } else if ((currentTemp >= 21) && (currentTemp <= 28)) {
-      weatherType = 'Sunny';
-    } else if ((currentTemp >= 29) && (currentTemp <= 31)) {
-      weatherType = 'Thunder';
-    } else if ((currentTemp >= 32) && (currentTemp <= 40)) {
-      weatherType = 'Heatwave';
-    } else {
-      weatherType = 'n/a';
+  // Assigning weather icon according to day temp
+    const getWeatherIcon = (temperature) => {
+      if ((temperature >= -5) && (temperature <= -1)){
+        return <FontAwesomeIcon icon={faSnowflake}/>;
+      } else if ((temperature >= 0) && (temperature <= 10)){
+        return <FontAwesomeIcon icon={faCloudShowersHeavy}/>;
+      } else if ((temperature >= 11) && (temperature <= 13)){
+        return <FontAwesomeIcon icon={faCloudRain}/>;
+      } else if ((temperature >= 14) && (temperature <= 16)){
+        return <FontAwesomeIcon icon={faCloud}/>;
+      } else if ((temperature >= 17) && (temperature <= 20)){
+        return <FontAwesomeIcon icon={faCloudSun}/>;
+      } else if ((temperature >= 21) && (temperature <= 28)){
+        return <FontAwesomeIcon icon={faSun}/>;
+      } else if ((temperature >= 29) && (temperature <= 31)){
+        return <FontAwesomeIcon icon={faCloudBolt}/>;
+      } else if ((temperature >= 32) && (temperature <= 40)){
+        return <FontAwesomeIcon icon={faTemperatureArrowUp}/>;
+      } else {
+        return <FontAwesomeIcon icon={faSnowflake}/>;
+      }
     };
-
-    // fontawesome
-    let weatherIcon;
-
-    switch (weatherType) {
-      case 'Frosty':
-        weatherIcon = <FontAwesomeIcon icon={faSnowflake}/>;
-        break;
-      case 'Rainy':
-        weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy}/>;
-        break;
-      case 'Drizzly':
-        weatherIcon = <FontAwesomeIcon icon={faCloudRain}/>;
-        break;
-      case 'Cloudy':
-        weatherIcon = <FontAwesomeIcon icon={faCloud}/>;
-        break;
-      case 'Partly cloudy':
-        weatherIcon = <FontAwesomeIcon icon={faCloudSun}/>;
-        break;
-      case 'Sunny':
-        weatherIcon = <FontAwesomeIcon icon={faSun}/>;
-        break;
-      case 'Thunder':
-        weatherIcon = <FontAwesomeIcon icon={faCloudBolt}/>;
-        break;
-      case 'Heatwave':
-        weatherIcon = <FontAwesomeIcon icon={faTemperatureArrowUp}/>;
-        break;
-      default:
-        weatherIcon = <FontAwesomeIcon icon={faCloud}/>;
-    };
-
 
   return(
     <div className="weekly-forecast-card">
@@ -91,57 +76,64 @@ function WeeklyForecast(props){
 
       <div className='day-card'>
         <li className='day'>Today</li>
-        <div className="weekly-forecast-icon">{weatherIcon}</div>
-        <span className='day-forecast'>{currentTemp + 2}°C |
+        <div className="weekly-forecast-icon">{getWeatherIcon(currentTemp + 2)}</div>
+        <span className='day-forecast'>
+          <span className="day-temp">{currentTemp + 2}°C |</span>
           <span className='eve-temp'>{currentTemp - 9}°C</span>
         </span>
       </div>
 
       <div className='day-card'>
-        <li className='day'>{dayName}</li>
-        <div className="weekly-forecast-icon">{weatherIcon}</div>
-        <span className='day-forecast'>{currentTemp + 5}°C |
+        <li className='day'>{day1}</li>
+        <div className="weekly-forecast-icon">{getWeatherIcon(currentTemp + 5)}</div>
+        <span className='day-forecast'>
+          <span className="day-temp">{currentTemp + 5}°C |</span>
           <span className='eve-temp'>{currentTemp - 5}°C</span>
         </span>
       </div>
 
       <div className='day-card'>
-        <li className='day'>{dayName}</li>
-        <div className="weekly-forecast-icon">{weatherIcon}</div>
-        <span className='day-forecast'>{currentTemp + 4}°C |
+        <li className='day'>{day2}</li>
+        <div className="weekly-forecast-icon">{getWeatherIcon(currentTemp + 4)}</div>
+        <span className='day-forecast'>
+          <span className="day-temp">{currentTemp + 4}°C |</span>
           <span className='eve-temp'>{currentTemp - 5}°C</span>
         </span>
       </div>
 
       <div className='day-card'>
-        <li className='day'>{dayName}</li>
-        <div className="weekly-forecast-icon">{weatherIcon}</div>
-        <span className='day-forecast'>{currentTemp - 9}°C |
+        <li className='day'>{day3}</li>
+        <div className="weekly-forecast-icon">{getWeatherIcon(currentTemp - 9)}</div>
+        <span className='day-forecast'>
+          <span className="day-temp">{currentTemp - 9}°C |</span>
           <span className='eve-temp'>{currentTemp - 14}°C</span>
         </span>
       </div>
 
       <div className='day-card'>
-        <li className='day'>{dayName}</li>
-        <div className="weekly-forecast-icon">{weatherIcon}</div>
-        <span className='day-forecast'>{currentTemp - 8}°C |
+        <li className='day'>{day4}</li>
+        <div className="weekly-forecast-icon">{getWeatherIcon(currentTemp - 8)}</div>
+        <span className='day-forecast'>
+          <span className="day-temp">{currentTemp - 8}°C |</span>
           <span className='eve-temp'>{currentTemp - 13}°C</span>
         </span>
       </div>
 
       <div className='day-card'>
-        <li className='day'>{dayName}</li>
-        <div className="weekly-forecast-icon">{weatherIcon}</div>
-        <span className='day-forecast'>{currentTemp - 20}°C |
-          <span className='eve-temp'>{currentTemp - 25}°C</span>
+        <li className='day'>{day5}</li>
+        <div className="weekly-forecast-icon">{getWeatherIcon(currentTemp - 20)}</div>
+        <span className='day-forecast'>
+          <span className="day-temp">{currentTemp - 16}°C |</span>
+          <span className='eve-temp'>{currentTemp - 18}°C</span>
         </span>
       </div>
 
       <div className='day-card'>
-        <li className='day'>{dayName}</li>
-        <div className="weekly-forecast-icon">{weatherIcon}</div>
-        <span className='day-forecast'>{currentTemp - 22}°C |
-          <span className='eve-temp'>{currentTemp - 26}°C</span>
+        <li className='day'>{day6}</li>
+        <div className="weekly-forecast-icon">{getWeatherIcon(currentTemp - 22)}</div>
+        <span className='day-forecast'>
+          <span className="day-temp">{currentTemp - 17}°C |</span>
+          <span className='eve-temp'>{currentTemp - 18}°C</span>
         </span>
       </div>
 

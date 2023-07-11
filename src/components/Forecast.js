@@ -6,6 +6,7 @@ import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import { faHand } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faCloudSun } from "@fortawesome/free-solid-svg-icons";
+// import { faCloudSun } from '@fortawesome/free-duotone-svg-icons';
 import { faCloud } from "@fortawesome/free-solid-svg-icons";
 import { faCloudShowersHeavy } from "@fortawesome/free-solid-svg-icons";
 import { faSnowflake} from "@fortawesome/free-solid-svg-icons";
@@ -56,6 +57,9 @@ function Forecast(props) {
       dayName = 'n/a';
   };
 
+  // Access currentLocation from props!
+  const currentLocation = props.location;
+
   // Access currentTemp from props!
   const currentTemp = props.currentTemp;
 
@@ -93,31 +97,31 @@ function Forecast(props) {
 
   switch (weatherType) {
     case 'Frosty':
-      weatherIcon = <FontAwesomeIcon icon={faSnowflake}/>;
+      weatherIcon = <FontAwesomeIcon icon={faSnowflake} style={{color: 'white'}}/>;
       break;
     case 'Rainy':
-      weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy}/>;
+      weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy} style={{color: '#7ea3bd'}}/>;
       break;
     case 'Drizzly':
-      weatherIcon = <FontAwesomeIcon icon={faCloudRain}/>;
+      weatherIcon = <FontAwesomeIcon icon={faCloudRain} style={{color: '#9DB2BF'}}/>;
       break;
     case 'Cloudy':
-      weatherIcon = <FontAwesomeIcon icon={faCloud}/>;
+      weatherIcon = <FontAwesomeIcon icon={faCloud} style={{color: '#B2B2B2'}}/>;
       break;
     case 'Partly cloudy':
-      weatherIcon = <FontAwesomeIcon icon={faCloudSun}/>;
+      weatherIcon = <FontAwesomeIcon icon={faCloudSun} style={{color: '#EC9B3B'}} />;
       break;
     case 'Sunny':
-      weatherIcon = <FontAwesomeIcon icon={faSun}/>;
+      weatherIcon = <FontAwesomeIcon icon={faSun} style={{color: '#FEB139'}}/>;
       break;
     case 'Thunder':
-      weatherIcon = <FontAwesomeIcon icon={faCloudBolt}/>;
+      weatherIcon = <FontAwesomeIcon icon={faCloudBolt} style={{color: '#537188'}}/>;
       break;
     case 'Heatwave':
-      weatherIcon = <FontAwesomeIcon icon={faTemperatureArrowUp}/>;
+      weatherIcon = <FontAwesomeIcon icon={faTemperatureArrowUp} style={{color: '#E14D2A'}}/>;
       break;
     default:
-      weatherIcon = <FontAwesomeIcon icon={faCloud}/>;
+      weatherIcon = <FontAwesomeIcon icon={faCloud} style={{color: '#B2B2B2'}}/>;
   };
 
 
@@ -130,7 +134,9 @@ function Forecast(props) {
           <span className='current-temp'>
 
             <span className="temp-icon">
-              <span className="temp">{currentTemp}°C</span>
+              <span className="temp">{currentTemp}
+                <span className="degrees">°C</span>
+              </span>
               <span className="f-icon">{weatherIcon}</span>
             </span>
 
@@ -146,7 +152,7 @@ function Forecast(props) {
 
 
           <span className="weather-details">
-            <h2 className="current-location">London</h2>
+            <h2 className="current-location">{currentLocation}</h2>
             <p className="current-date-time">{dayName} {currentTime}</p>
             <p className="weather-type">{weatherType}</p>
           </span>

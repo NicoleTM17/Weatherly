@@ -26,6 +26,7 @@ import './App.css';
 
 // Google fonts:
 import WebFont from 'webfontloader';
+import { useState } from 'react';
 
 WebFont.load({
   google: {
@@ -57,15 +58,25 @@ library.add(faTemperatureArrowUp);
 
 function App() {
 
+  const [currentLocation, setCurrentLocation] = useState('London'); // state variable currentLocation is initially set to 'London'
+
   // Generate a number from -5 to 40 degrees (include 40!)
   const currentTemp = Math.floor(Math.random() * 46) - 5;
+
+  function updateLocation(newLocation) { // sets currentLocation state variable to the new location (so no longer 'London')
+    setCurrentLocation(newLocation);
+  }
+
 
   return (
   <div className='container'>
     <span className='search-forecast'>
-      <SearchBar/>
+      <SearchBar
+      updateLocation={updateLocation} // passed the updateLocation prop
+      />
       <Forecast
       currentTemp={currentTemp}
+      location={currentLocation} // passed the location prop
       />
     </span>
     <WeeklyForecast

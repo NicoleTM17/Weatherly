@@ -10,6 +10,7 @@ import { faSnowflake} from "@fortawesome/free-solid-svg-icons";
 import { faCloudBolt } from "@fortawesome/free-solid-svg-icons";
 import { faCloudRain } from "@fortawesome/free-solid-svg-icons";
 import { faTemperatureArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faSmog } from "@fortawesome/free-solid-svg-icons";
 
 // default fontawesome import:
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -52,7 +53,9 @@ function WeeklyForecast(props){
     const getWeatherIcon = (temperature) => {
       if ((temperature < 0 )){
         return <FontAwesomeIcon icon={faSnowflake} style={{color: 'white'}}/>;
-      } else if ((temperature >= 0) && (temperature <= 10)){
+      } else if ((temperature >= 0) && (temperature <= 3)) {
+        return <FontAwesomeIcon icon={faSmog} style={{color: '#838181'}}/>;
+      } else if ((temperature >= 4) && (temperature <= 10)){
         return <FontAwesomeIcon icon={faCloudShowersHeavy} style={{color: '#7ea3bd'}}/>;
       } else if ((temperature >= 11) && (temperature <= 13)){
         return <FontAwesomeIcon icon={faCloudRain} style={{color: '#9DB2BF'}}/>;

@@ -13,6 +13,7 @@ import { faSnowflake} from "@fortawesome/free-solid-svg-icons";
 import { faCloudBolt } from "@fortawesome/free-solid-svg-icons";
 import { faCloudRain } from "@fortawesome/free-solid-svg-icons";
 import { faTemperatureArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faSmog } from "@fortawesome/free-solid-svg-icons";
 
 // default fontawesome import:
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -74,7 +75,9 @@ function Forecast(props) {
 
   if ((currentTemp >= -5) && (currentTemp <= -1)) {
     weatherType = 'Frosty';
-  } else if ((currentTemp >= 0) && (currentTemp <= 10)) {
+  } else if ((currentTemp >= 0) && (currentTemp <= 3)) {
+    weatherType = 'Fog';
+  } else if ((currentTemp >= 4) && (currentTemp <= 10)) {
     weatherType = 'Rainy';
   } else if ((currentTemp >= 11) && (currentTemp <= 13)) {
     weatherType = 'Drizzly';
@@ -98,6 +101,9 @@ function Forecast(props) {
   switch (weatherType) {
     case 'Frosty':
       weatherIcon = <FontAwesomeIcon icon={faSnowflake} style={{color: 'white'}}/>;
+      break;
+    case 'Foggy':
+      weatherIcon = <FontAwesomeIcon icon={faSmog} style={{color: '#838181'}}/>;
       break;
     case 'Rainy':
       weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy} style={{color: '#7ea3bd'}}/>;

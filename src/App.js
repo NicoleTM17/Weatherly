@@ -14,6 +14,7 @@ import { faSnowflake} from "@fortawesome/free-solid-svg-icons";
 import { faCloudBolt } from "@fortawesome/free-solid-svg-icons";
 import { faCloudRain } from "@fortawesome/free-solid-svg-icons";
 import { faTemperatureArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faSmog } from "@fortawesome/free-solid-svg-icons";
 
 // Component imports:
 import Forecast from "./components/Forecast";
@@ -55,6 +56,7 @@ library.add(faSnowflake);
 library.add(faCloudBolt);
 library.add(faCloudRain);
 library.add(faTemperatureArrowUp);
+library.add(faSmog);
 
 function App() {
 

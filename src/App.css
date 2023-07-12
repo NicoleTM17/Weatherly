@@ -27,7 +27,7 @@
 
 .logo{
   position: absolute;
-  top: 0;
+  top: -15px;
   left: 20px;
   font-family: 'Playfair Display', serif;
   color: white;

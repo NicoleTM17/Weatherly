@@ -1,9 +1,10 @@
 
 .weekly-forecast-card{
   /* border: 1px solid white; */
-  background-color: rgba(219, 223, 234, 0.3);
-  border-radius: 5px;
-  margin-top: 20px;
+  /* background-color: rgba(219, 223, 234, 0.6); */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin-top: 25px;
   width: 1000px;
   height: 200px;
   margin-bottom: 70px;
@@ -27,6 +28,7 @@
 
 .day{
   margin-bottom: 12px;
+  color: rgb(23, 107, 135);
   /* color: #7ea3bd; */
   /* color: #838181; */
 }
@@ -34,12 +36,14 @@
 .day-forecast{
   font-size: 12px;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .eve-temp{
   opacity: 0.6;
   margin-left: 5px;
+  color: rgb(52, 125, 117);
 }
 
 .weekly-forecast-icon{

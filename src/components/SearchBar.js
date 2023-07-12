@@ -32,9 +32,9 @@ function SearchBar({updateLocation}) {
       <form className="searchbar-form">
         <input onChange={handleChange} // On change event for search bar
           className="search-input"
-          style={{fontStyle: 'italic'}}
+          style={{fontStyle: 'italic', letterSpacing: 1}}
           type="text"
-          placeholder="Enter a city"
+          placeholder="Enter a city..."
           value = {location}
         />
         <button onClick={handleClick} // on click event for button

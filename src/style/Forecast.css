@@ -20,7 +20,12 @@
 
 .highs{
   margin-right: 5px;
+  color: rgba(0, 0, 0, 0.6);
 }
+
+/* .lows{
+  color: rgb(52, 125, 117);
+} */
 
 .current-temp{
   /* includes temperature and icon */
@@ -40,11 +45,14 @@
 .temp{
   /* just temperature */
   margin-right: 12px;
+  color: rgb(23, 107, 135);
+  font-weight: 600;
 }
 
 .degrees{
   font-size: 20px;
   vertical-align:super;
+  color: rgb(23, 107, 135);
 }
 
 .weather-details{
@@ -54,17 +62,20 @@
   margin-right: 285px;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
+  color: rgb(23, 107, 135);
 }
 
 .current-location{
-  font-size: 30px;
+  font-size: 35px;
   margin-bottom: 5px;
   margin-top: 10px;
   text-transform: capitalize;
+  font-weight: 700;
 }
 
 .f-icon{
   font-size: 45px;
+  /* color: rgb(165, 162, 162); */
 }
 
 
@@ -98,7 +109,8 @@
   margin-left: 30px;
   text-align: center;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.3)
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgb(23, 107, 135);
 }
 
 .conditions-title{
@@ -113,8 +125,29 @@
 
 .conditions-icon{
   margin-top: 10px;
+  /* color: rgb(37, 164, 206); */
+  color: rgb(37, 164, 206);
 }
 
 .eve-temp-main{
   opacity: 0.7;
+  color: rgb(52, 125, 117);
 }
+
+.current-date-time{
+  border: 2px solid rgba(23, 107, 135, 0.7);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* .hand-icon{
+
+} */
+
+/* .wind-icon{
+  color: #9DB2BF;
+}
+
+.droplet-icon{
+  color: rgb(37, 164, 206);
+} */

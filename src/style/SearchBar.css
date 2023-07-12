@@ -11,7 +11,7 @@
   /* height: 25px; */
   padding: 10px 15px;
   border-radius: 8px;
-  border: 1px solid white;
+  border: 1px solid rgb(23, 107, 135);
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -20,10 +20,18 @@
   padding: 10px 15px;
   margin-left: 5px;
   border-radius: 8px;
-  border: 1px solid white;
-  background-color: white;
+  border: 1px solid rgb(23, 107, 135);
+  background-color: rgb(23, 107, 135);
+  color: white;
   font-family: 'Quicksand', sans-serif;
   cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.submit-btn:hover{
+  border: 1px solid rgb(23, 107, 135);
+  background-color: white;
+  color: black;
 }
 
 .magnifying-glass{

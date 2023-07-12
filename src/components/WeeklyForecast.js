@@ -52,7 +52,7 @@ function WeeklyForecast(props){
   // Assigning weather icon according to day temp
     const getWeatherIcon = (temperature) => {
       if ((temperature < 0 )){
-        return <FontAwesomeIcon icon={faSnowflake} style={{color: 'white'}}/>;
+        return <FontAwesomeIcon icon={faSnowflake} style={{color:'rgb(165, 162, 162)'}}/>;
       } else if ((temperature >= 0) && (temperature <= 3)) {
         return <FontAwesomeIcon icon={faSmog} style={{color: '#838181'}}/>;
       } else if ((temperature >= 4) && (temperature <= 10)){
@@ -68,7 +68,7 @@ function WeeklyForecast(props){
       } else if ((temperature >= 29) && (temperature <= 31)){
         return <FontAwesomeIcon icon={faCloudBolt} style={{color: '#537188'}}/>;
       } else if ((temperature >= 32) && (temperature <= 40)){
-        return <FontAwesomeIcon icon={faTemperatureArrowUp} style={{color: '#E14D2A'}}/>;
+        return <FontAwesomeIcon icon={faTemperatureArrowUp} style={{color: '#B73E3E'}}/>;
       } else {
         return <FontAwesomeIcon icon={faCloud} style={{color: '#B2B2B2'}}/>;
       }

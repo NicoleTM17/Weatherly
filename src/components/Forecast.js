@@ -100,7 +100,7 @@ function Forecast(props) {
 
   switch (weatherType) {
     case 'Frosty':
-      weatherIcon = <FontAwesomeIcon icon={faSnowflake} style={{color: 'white'}}/>;
+      weatherIcon = <FontAwesomeIcon icon={faSnowflake} style={{color: 'rgb(165, 162, 162)'}}/>;
       break;
     case 'Foggy':
       weatherIcon = <FontAwesomeIcon icon={faSmog} style={{color: '#838181'}}/>;
@@ -124,7 +124,7 @@ function Forecast(props) {
       weatherIcon = <FontAwesomeIcon icon={faCloudBolt} style={{color: '#537188'}}/>;
       break;
     case 'Heatwave':
-      weatherIcon = <FontAwesomeIcon icon={faTemperatureArrowUp} style={{color: '#E14D2A'}}/>;
+      weatherIcon = <FontAwesomeIcon icon={faTemperatureArrowUp} style={{color: '#B73E3E'}}/>;
       break;
     default:
       weatherIcon = <FontAwesomeIcon icon={faCloud} style={{color: '#B2B2B2'}}/>;
@@ -169,21 +169,21 @@ function Forecast(props) {
           <div className="conditions-card">
             <br/>
             <span className='conditions-title'>Feels like:</span>
-            <div><FontAwesomeIcon icon={faHand} className="conditions-icon"/></div>
+            <div><FontAwesomeIcon icon={faHand} className="conditions-icon hand-icon"/></div>
             <p className="conditions-details">{currentTemp - 2}°C</p>
           </div>
 
           <div className="conditions-card">
             <br/>
             <span className='conditions-title'>Humidity:</span>
-            <div><FontAwesomeIcon icon={faDroplet} className="conditions-icon"/></div>
+            <div><FontAwesomeIcon icon={faDroplet} className="conditions-icon droplet-icon"/></div>
             <p className="conditions-details">{currentHumidity}%</p>
           </div>
 
           <div className="conditions-card">
             <br/>
             <span className='conditions-title'>Wind:</span>
-            <div><FontAwesomeIcon icon={faWind} className="conditions-icon"/></div>
+            <div><FontAwesomeIcon icon={faWind} className="conditions-icon wind-icon"/></div>
             <p className="conditions-details">{currentWind}km/h</p>
           </div>
         </div>

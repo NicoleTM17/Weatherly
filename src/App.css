@@ -1,7 +1,7 @@
 
 .container{
-  background-image: url(https://images.unsplash.com/photo-1505533542167-8c89838bb19e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
-  background-size: cover;
+  /* background-image: url(https://images.unsplash.com/photo-1505533542167-8c89838bb19e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover; */
   /* position: relative; */
   display: flex;
   flex-direction: column;
@@ -15,13 +15,27 @@
 
 .search-forecast{
   /* border: 1px solid white; */
-  background-color: rgba(219, 223, 234, 0.3);
-  border-radius: 5px;
+  /* background-color: rgba(219, 223, 234, 0.6); */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 35px;
+}
+
+.logo{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  /* max-width: 150px; */
+  /* margin-right: 1270px;
+  margin-top: 20px; */
 }
 
 /* THESE ARE NOT WORKING */

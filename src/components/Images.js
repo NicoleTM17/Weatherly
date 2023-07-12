@@ -1,40 +1,72 @@
+import { useEffect} from "react"; // helps us perform side effects in React such as fetching from an API
+
 // I am wanting to retrieve images from Unsplash API based on my weatherType variable
 // If weatherType === sunny I would like to retrieve an image representing sun, etc.
 // the current background-image is in App.css under the 'container' class
 
+
 function Images(props) {
+
+  // Unsplash API key
   const apiKey = process.env.REACT_APP_UNSPLASH_API_KEY;
+
+  // State variable to store fetched image URL
+  // const [backgroundImg, setBackgroundImg] = useState('');
+
+  // setImagesBackgroundImg function passed as props!
+  const {setImagesBackgroundImg}  = props;
 
   // Access currentTemp from props!
   const currentTemp = props.currentTemp;
 
   // weather type:
-  let weatherType;
+  let weatherTypes;
 
   if ((currentTemp >= -5) && (currentTemp <= -1)) {
-    weatherType = 'Snow';
+    weatherTypes = 'Snow';
   } else if ((currentTemp >= 0) && (currentTemp <= 3)) {
-    weatherType = 'Fog';
+    weatherTypes = 'Fog';
   } else if ((currentTemp >= 4) && (currentTemp <= 10)) {
-    weatherType = 'Rain';
+    weatherTypes = 'Rain';
   } else if ((currentTemp >= 11) && (currentTemp <= 13)) {
-    weatherType = 'Drizzle';
+    weatherTypes = 'Drizzle';
   } else if ((currentTemp >= 14) && (currentTemp <= 16)) {
-    weatherType = 'Clouds';
+    weatherTypes = 'Clouds';
   } else if ((currentTemp >= 17) && (currentTemp <= 20)) {
-    weatherType = 'Cloudy';
+    weatherTypes = 'Cloudy';
   } else if ((currentTemp >= 21) && (currentTemp <= 28)) {
-    weatherType = 'Sunny';
+    weatherTypes = 'Sunny';
   } else if ((currentTemp >= 29) && (currentTemp <= 31)) {
-    weatherType = 'Thunder';
+    weatherTypes = 'Thunder';
   } else if ((currentTemp >= 32) && (currentTemp <= 40)) {
-    weatherType = 'Sun';
+    weatherTypes = 'Sun';
   } else {
-    weatherType = 'Clouds';
+    weatherTypes = 'Clouds';
   };
 
+// Here we are fetching a random image based on weatherTypes
+// whenever the weather or the API key changes, a new image will be fetched
+  useEffect(() => {
+    const fetchImage = async () => { // our callback function
+      try {
+        const response = await fetch(
+          `https://api.unsplash.com/photos/random?query=${weatherTypes}&orientation=landscape&client_id=${apiKey}`
+        ); // specific query parameters include weatherTypes as well as our API key
+        const data = await response.json(); // await pauses execution until code is received and response.json extracts data from the response
+        const imgUrl = data[0].urls.regular; // regular url extracted and stored inside imgUrl
+        setImagesBackgroundImg(imgUrl); // responsible for updating the background image
+      } catch (error) { // error is caught if there is one during fetch
+        console.error('There was an error fetching an image from Unsplash', error);
+      }
+    };
+
+    fetchImage();
+  }, [weatherTypes, apiKey, setImagesBackgroundImg]); // the dependency array tells React to rerun the useEffect whenever any of these variables change (so a new image will be fetched).
+  // Does apikey need to be in here?
   return(
-    <h1>Images component</h1>
+    <div className="img-container">
+
+    </div>
   );
 }
 

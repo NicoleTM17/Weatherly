@@ -53,7 +53,7 @@ function Images(props) {
           `https://api.unsplash.com/photos/random?query=${weatherTypes}&orientation=landscape&client_id=${apiKey}`
         ); // specific query parameters include weatherTypes as well as our API key
         const data = await response.json(); // await pauses execution until code is received and response.json extracts data from the response
-        const imgUrl = data[0].urls.regular; // regular url extracted and stored inside imgUrl
+        const imgUrl = data.urls.regular; // regular url extracted and stored inside imgUrl
         setImagesBackgroundImg(imgUrl); // responsible for updating the background image
       } catch (error) { // error is caught if there is one during fetch
         console.error('There was an error fetching an image from Unsplash', error);

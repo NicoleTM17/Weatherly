@@ -69,7 +69,12 @@ function App() {
 
 
   // Generate a number from -5 to 40 degrees (include 40!)
-  const currentTemp = Math.floor(Math.random() * 46) - 5;
+  const currentTemp = generateRandomTemperature();
+
+  function generateRandomTemperature() {
+    return Math.floor(Math.random() * 46) - 5;
+  }
+
 
   function updateLocation(newLocation) { // sets currentLocation state variable to the new location (so no longer 'London')
     setCurrentLocation(newLocation);

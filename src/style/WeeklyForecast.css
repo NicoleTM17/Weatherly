@@ -51,3 +51,35 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .weekly-forecast-card {
+    width: 90%;
+    height: 140px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .weekly-forecast-card {
+    width: 80%;
+    height: 160px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .weekly-forecast-card {
+    width: 70%;
+    height: 180px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+  }
+}

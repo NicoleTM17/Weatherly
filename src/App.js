@@ -131,6 +131,7 @@ useEffect(() => {
   setCurrentTemp(temp);
   const weatherType = getWeatherType(temp);
   fetchBackgroundImg(weatherType);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 

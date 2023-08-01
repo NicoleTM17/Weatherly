@@ -26,7 +26,9 @@ function Forecast(props) {
 
   // Get current day, hours and minutes
   const today = new Date();
-  const currentTime = today.getHours() + ":" + today.getMinutes();
+  const hours = today.getHours().toString().padStart(2, '0');
+  const minutes = today.getMinutes().toString().padStart(2, '0');
+  const currentTime = hours + ":" + minutes;
   const currentDay = today.getDay();
 
   // assign days of the week to abbreviations

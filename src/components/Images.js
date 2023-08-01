@@ -62,7 +62,7 @@ function Images(props) {
 
     fetchImage();
   }, [weatherTypes, apiKey, setImagesBackgroundImg]); // the dependency array tells React to rerun the useEffect whenever any of these variables change (so a new image will be fetched).
-  // Does apikey need to be in here?
+
   return(
     <div className="img-container">
 

@@ -18,6 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // CSS:
 import '../style/WeeklyForecast.css';
+import '../style/responsive.css'
 
 function WeeklyForecast(props){
 
@@ -52,25 +53,25 @@ function WeeklyForecast(props){
   // Assigning weather icon according to day temp
     const getWeatherIcon = (temperature) => {
       if ((temperature < 0 )){
-        return <FontAwesomeIcon icon={faSnowflake} style={{color:'rgb(165, 162, 162)'}}/>;
+        return <FontAwesomeIcon icon={faSnowflake} className="weekly-weather-icon" style={{color:'rgb(165, 162, 162)'}}/>;
       } else if ((temperature >= 0) && (temperature <= 3)) {
-        return <FontAwesomeIcon icon={faSmog} style={{color: '#838181'}}/>;
+        return <FontAwesomeIcon icon={faSmog} className="weekly-weather-icon" style={{color: '#838181'}}/>;
       } else if ((temperature >= 4) && (temperature <= 10)){
-        return <FontAwesomeIcon icon={faCloudShowersHeavy} style={{color: '#7ea3bd'}}/>;
+        return <FontAwesomeIcon icon={faCloudShowersHeavy} className="weekly-weather-icon" style={{color: '#7ea3bd'}}/>;
       } else if ((temperature >= 11) && (temperature <= 13)){
-        return <FontAwesomeIcon icon={faCloudRain} style={{color: '#9DB2BF'}}/>;
+        return <FontAwesomeIcon icon={faCloudRain} className="weekly-weather-icon" style={{color: '#9DB2BF'}}/>;
       } else if ((temperature >= 14) && (temperature <= 16)){
-        return <FontAwesomeIcon icon={faCloud} style={{color: '#B2B2B2'}}/>;
+        return <FontAwesomeIcon icon={faCloud} className="weekly-weather-icon" style={{color: '#B2B2B2'}}/>;
       } else if ((temperature >= 17) && (temperature <= 20)){
-        return <FontAwesomeIcon icon={faCloudSun} style={{color: '#EC9B3B'}} />;
+        return <FontAwesomeIcon icon={faCloudSun} className="weekly-weather-icon" style={{color: '#EC9B3B'}} />;
       } else if ((temperature >= 21) && (temperature <= 28)){
-        return <FontAwesomeIcon icon={faSun} style={{color: '#FEB139'}}/>;
+        return <FontAwesomeIcon icon={faSun} className="weekly-weather-icon" style={{color: '#FEB139'}}/>;
       } else if ((temperature >= 29) && (temperature <= 31)){
-        return <FontAwesomeIcon icon={faCloudBolt} style={{color: '#537188'}}/>;
+        return <FontAwesomeIcon icon={faCloudBolt} className="weekly-weather-icon" style={{color: '#537188'}}/>;
       } else if ((temperature >= 32) && (temperature <= 40)){
-        return <FontAwesomeIcon icon={faTemperatureArrowUp} style={{color: '#B73E3E'}}/>;
+        return <FontAwesomeIcon icon={faTemperatureArrowUp} className="weekly-weather-icon" style={{color: '#B73E3E'}}/>;
       } else {
-        return <FontAwesomeIcon icon={faCloud} style={{color: '#B2B2B2'}}/>;
+        return <FontAwesomeIcon icon={faCloud} className="weekly-weather-icon" style={{color: '#B2B2B2'}}/>;
       }
     };
 

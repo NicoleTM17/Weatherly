@@ -106,7 +106,7 @@ const [backgroundImg, setBackgroundImg] = useState(null); // initialised with nu
 
 const apiKey = process.env.REACT_APP_UNSPLASH_API_KEY;
 
-// Default image
+// Default background image
   const defaultBackgroundImg =
   'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80';
 
@@ -131,7 +131,6 @@ useEffect(() => {
   setCurrentTemp(temp);
   const weatherType = getWeatherType(temp);
   fetchBackgroundImg(weatherType);
-// eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 
